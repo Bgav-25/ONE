@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --color-fondo:#8D493A;
+    --color-texto:#D0B8A8;
+    --color-cabecera:#F8EDE3;
+    --color-footer:#DA8B44;
+
+    --fuente-montserrat: 'montserrat', sans-serif;
+    --fuente-krona: 'Krona One', sans-serif;
+
+}
+
+*{
+    padding: 0;
+    margin: 0;
+} /* se utilizan para eliminar formatos predeterminados de los navegadores que pueden arruinar
+nuestra estilización*/
+
+body{
+    background-color: var(--color-fondo);/*#8D493A; /* Puedes dar las coordenadas del color por numeros, letras o escribir el color en ingles* o por variables */
+    color: var(--color-texto);
+    /*height: 100vh;*/ /* se utiliza para que el 'body' tome toda la pantalla del navegador, funciona con el viewport del html*/
+    box-sizing: border-box; /*se utiliza para que los elementos no se salgan del cuerpo principal del proyecto*/
+}
+
+.header{
+    padding: 2% 0% 0% 10%;
+}
+
+.header_menu{
+    display: flex;
+    gap: 80px;
+}
+
+.header_menu_link{
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem; /*los rem son mejor para la visualización de la pag, 1 rem es siempre 16px*/
+    font-weight: 600;
+    color: var(--color-cabecera);
+    text-decoration: none;
+}
+
+.presentacion{
+    display:flex; /*ordena la informacion del html*/
+    align-items: center; /* centra la informacion anteriomente ordenada*/
+    padding: 3% 10%;
+    /*margin: 10% 10%; separa los elementos del borde de la pag con coordenadas x e y*/
+    justify-content: space-between; /*crea espacio entre los elementos del main*/
+    gap: 82px;
+}
+
+.presentacion_contenido{
+    width: 50%; /* tomar referencia del tamaño de la seccion desde el proyecto en canva*/
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /*distancia vertical de los elementos flex*/
+}
+
+.presentacion_contenido_titulo { /* sacar fuentes de google fonts y los tamaños del canva*/
+    font-size: 2.25rem;
+    font-family: var(--fuente-krona);
+}
+
+.titulo-destacado{ /* para usar las clases de css en este caso de un strong siempre se escribe el nombre con
+    un punto al inicio*/
+color: var(--color-cabecera);
+}
+
+.presentacion_contenido_texto{
+    font-size: 1.5rem;
+    font-family: var(--fuente-montserrat);
+}
+
+.presentacion_enlaces{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content para flex horizontal, align-items para flex vertical(column)*/
+    gap: 32px; /*interlineado es gap*/
+}
+
+.presentacion_enlaces_subtitulo{
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--color-texto);
+}
+
+.presentacion_enlaces_link{
+    width: 50%; /*anchura total del boton en la pag*/
+    padding: 21.5px 0; /*altura y anchura del boton ajustables*/
+    /*background-color: #F8EDE3; */
+    /*text-align: center;*/
+    border-radius: 8px; /*le da curvas a la esquina del boton*/
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color-texto);
+    border: 2px solid var(--color-cabecera); /*en orden: tamaño, tipo y color de borde*/
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.presentacion_enlaces_link:hover{
+background-color: var(--color-footer);
+}
+
+.presentacion_imagen{
+    width: 50%;
+}
+
+.footer{
+    background-color: var(--color-footer);
+    padding: 24px;
+    color: var(--color-cabecera);
+    text-align: center;
+    font-family: var(--fuente-montserrat);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+@media (max-width: 1200px ){
+
+    .header{
+    padding: 10%;
+    }
+
+    .header_menu{
+        justify-content: center;
+    }
+
+    .presentacion{
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+    .presentacion_contenido{
+        width: auto;
+    }
+}
